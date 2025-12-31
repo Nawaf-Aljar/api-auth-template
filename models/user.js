@@ -12,6 +12,11 @@ const userSchema = mongoose.Schema({
     required: true,
   },
 });
+userSchema.set("toJSON",{
+    transform: (document, returnedObject) => {
+        delete returnedObject.password
+    }
+})
 // then we register the model with mongoose
 const User = mongoose.model('User', userSchema);
 

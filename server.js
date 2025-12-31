@@ -6,6 +6,9 @@ const mongoose = require("mongoose")
 const morgan = require("morgan")
 const cors = require('cors')
 
+//controllers
+const authCtrl = require("./controllers/auth")
+
 // Middleware
 
 app.use(cors())
@@ -26,6 +29,9 @@ conntectToDB()
 
 //Routes
 
+//Public
+app.use("/auth",authCtrl)
+//Private
 
 app.listen(process.env.PORT || 3000,()=>{
     console.log('App is running on port 3000')
