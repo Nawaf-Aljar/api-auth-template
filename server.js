@@ -8,8 +8,8 @@ const cors = require('cors')
 
 // Middleware
 
-app.use(cors());
-app.use(express.json());ß
+app.use(cors())
+app.use(express.json())
 app.use(morgan("dev")) 
 
 async function conntectToDB(){ 
@@ -27,6 +27,6 @@ conntectToDB()
 //Routes
 
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log('App is running on port 3000')
 })
